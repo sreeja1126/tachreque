@@ -1,0 +1,1 @@
+﻿# TACHREQUE - A JewelDesk
