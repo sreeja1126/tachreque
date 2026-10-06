@@ -3,6 +3,8 @@ import OwnerLogin from "./pages/owner/OwnerLogin";
 import OwnerDashboard from "./pages/owner/OwnerDashboard";
 import OwnerLayout from "./layouts/OwnerLayout";
 import Inventory from "./pages/owner/Inventory";
+import Purchases from "./pages/owner/Purchases";
+import PurchaseForm from "./pages/owner/PurchaseForm";
 
 function App() {
   return (
@@ -26,6 +28,14 @@ function App() {
           <Route
             path="/owner/inventory"
             element={<Inventory />}
+          />
+          <Route
+            path="/owner/purchases"
+            element={<Purchases />}
+          />
+          <Route
+            path="/owner/purchases/new"
+            element={<PurchaseForm />}
           />
         </Route>
       </Routes>
