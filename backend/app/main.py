@@ -3,6 +3,7 @@ from fastapi.responses import JSONResponse
 
 from app.api.v1.routers import auth
 from app.api.v1.routers.customer import auth as customer_auth
+from app.api.v1.routers.inventory import inventory
 
 from app.core.exceptions import (
     AppException,
@@ -85,6 +86,11 @@ app.include_router(
     prefix="/api/v1",
 )
 
+app.include_router(
+    inventory.router,
+    prefix="/api/v1",
+)
+
 
 @app.get("/")
 def root():
@@ -99,5 +105,3 @@ def health_check():
     return {
         "status": "healthy",
     }
-
-
