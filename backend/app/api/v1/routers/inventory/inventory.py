@@ -40,3 +40,28 @@ def get_current_stock(
         "gold_weight_grams": 0,
         "silver_weight_grams": 0,
     }
+
+@router.get(
+    "/gold",
+    response_model=dict[str, str],
+)
+def get_gold_stock(
+    current_owner: dict = Depends(get_current_owner),
+):
+    return {
+        "metal_type": "gold",
+        "weight_grams": "0",
+    }
+
+
+@router.get(
+    "/silver",
+    response_model=dict[str, str],
+)
+def get_silver_stock(
+    current_owner: dict = Depends(get_current_owner),
+):
+    return {
+        "metal_type": "silver",
+        "weight_grams": "0",
+    }
