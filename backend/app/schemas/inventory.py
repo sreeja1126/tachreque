@@ -18,3 +18,12 @@ class OpeningStockResponse(BaseModel):
     message: str
     metal_type: str
     weight_grams: Decimal
+
+
+class CurrentStockResponse(BaseModel):
+    gold_weight_grams: Decimal = Field(
+        ge=0,
+    )
+    silver_weight_grams: Decimal = Field(
+        ge=0,
+    )

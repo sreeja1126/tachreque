@@ -4,6 +4,7 @@ from app.core.dependencies import get_current_owner
 from app.schemas.inventory import (
     OpeningStockRequest,
     OpeningStockResponse,
+    CurrentStockResponse,
 )
 
 
@@ -25,4 +26,17 @@ def add_opening_stock(
         "message": "Opening stock recorded successfully",
         "metal_type": data.metal_type,
         "weight_grams": data.weight_grams,
+    }
+
+
+@router.get(
+    "",
+    response_model=CurrentStockResponse,
+)
+def get_current_stock(
+    current_owner: dict = Depends(get_current_owner),
+):
+    return {
+        "gold_weight_grams": 0,
+        "silver_weight_grams": 0,
     }
